@@ -371,8 +371,7 @@ const DL={"SEG":"Seg","TER":"Ter","QUA":"Qua","QUI":"Qui","SEX":"Sex","SAB":"Sá
 const DO={"SEG":1,"TER":2,"QUA":3,"QUI":4,"SEX":5,"SAB":6,"DOM":7,"Indefinido":8};
 let sel=null;
 
-const nd=new Date();
-const hh=String(nd.getHours()).padStart(2,'0'),mm=String(nd.getMinutes()).padStart(2,'0');document.getElementById('hdate').textContent='Últ. atualização '+nd.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit'})+' '+hh+':'+mm;
+document.getElementById('hdate').textContent='Últ. atualização 27/05/2026 18:19';
 
 function goTab(t){
   document.querySelectorAll('.nav-item').forEach((el,i)=>el.classList.toggle('on',['painel','setor'][i]===t));
