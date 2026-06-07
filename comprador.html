@@ -172,10 +172,11 @@ table.gt tfoot td:first-child{
 .s-detail.on{display:block;}
 
 /* ── KPIs ── */
-.krow{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:10px;}
-.kpi{background:#fff;border:1px solid var(--gray200);border-radius:var(--radius);padding:8px 4px;text-align:center;}
-.kpi-l{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray400);margin-bottom:4px;}
-.kpi-v{font-size:18px;font-weight:700;line-height:1;color:var(--navy);}
+.krow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+@media(min-width:560px){.krow{grid-template-columns:repeat(6,1fr);}}
+.kpi{background:#fff;border:1px solid var(--gray200);border-radius:var(--radius);padding:12px 10px;text-align:center;}
+.kpi-l{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray400);margin-bottom:6px;}
+.kpi-v{font-size:24px;font-weight:700;line-height:1;color:var(--navy);}
 .kpi-v.kblue{color:var(--blue);}
 .kpi-v.kred{color:var(--red);}
 .kpi-v.kgreen{color:var(--green);}
@@ -281,7 +282,7 @@ td.td-dia{text-align:center;white-space:nowrap;}
 .sala-btn:hover{background:rgba(255,255,255,.06);color:#cbd5e1;}
 .sala-btn.active{background:#2d7ef7;color:#fff;border-color:#2d7ef7;z-index:1;}
 .sala-btn.active + .sala-btn{border-left-color:#2d7ef7;}
-.r-m1{display:inline-block;font-size:.6rem;font-weight:700;padding:1px 5px;border-radius:4px;background:#fef3c7;color:#d97706;border:1px solid #fde68a;white-space:nowrap;margin-right:3px;}
+.r-m1{display:inline-block;font-size:.6rem;font-weight:700;padding:1px 5px;border-radius:4px;background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;white-space:nowrap;margin-right:3px;}
 
 .splash{transition:opacity 1s ease, transform 1s ease;}
 .splash.hide{opacity:0;transform:scale(1.05);pointer-events:none;}
@@ -350,7 +351,7 @@ td.td-dia{text-align:center;white-space:nowrap;}
   <div id="pg-painel" class="page on">
     <div class="sec-head">
       <span class="sec-title">Visão Geral de Compradores</span>
-      <span class="sec-sub">Todos os setores · atualizado em 06/06/2026 22:39</span>
+      <span class="sec-sub">Todos os setores · atualizado em 06/06/2026 23:01</span>
     </div>
     <div class="tcard">
       <table class="gt">
@@ -405,7 +406,7 @@ td.td-dia{text-align:center;white-space:nowrap;}
       <div class="drow">
         <div class="drow-title">
           <div style="display:flex;flex-direction:column;gap:2px;">
-            <div style="display:flex;align-items:center;gap:7px;">Não Compradores M&#8209;0 <span class="badge" id="ocnt">0</span></div>
+            <div style="display:flex;align-items:center;gap:7px;">Não Compradores no Mês <span class="badge" id="ocnt">0</span></div>
             <span style="font-size:.6rem;color:#94a3b8;font-weight:400;">(M-1 = Comprou mês anterior)</span>
           </div>
         </div>
@@ -446,7 +447,7 @@ const DL={"SEG":"Seg","TER":"Ter","QUA":"Qua","QUI":"Qui","SEX":"Sex","SAB":"Sá
 const DO={"SEG":1,"TER":2,"QUA":3,"QUI":4,"SEX":5,"SAB":6,"DOM":7,"Indefinido":8};
 let sel=null;
 
-document.getElementById('hdate').textContent='Últ. atualização 06/06/2026 22:39';
+document.getElementById('hdate').textContent='Últ. atualização 07/06/2026 01:56';
 
 let _sala='1';
 function escolherSala(s){
@@ -518,6 +519,7 @@ function pickSetor(s){
     <div class="kpi"><div class="kpi-l">Meta</div><div class="kpi-v kblue">${p.meta}</div></div>
     <div class="kpi"><div class="kpi-l">Real</div><div class="kpi-v">${p.real}</div></div>
     <div class="kpi"><div class="kpi-l">GAP</div><div class="kpi-v ${p.gap<0?'kred':'kgreen'}">${p.gap}</div></div>
+    <div class="kpi"><div class="kpi-l">MN&nbsp;/&nbsp;dia</div><div class="kpi-v kamber">${Math.ceil(p.mn)}</div></div>
     <div class="kpi"><div class="kpi-l">Agendados</div><div class="kpi-v kblue">${p.agend}</div></div>
     <div class="kpi"><div class="kpi-l">GAP Agend.</div><div class="kpi-v ${p.gap_agend<0?'kred':'kgreen'}">${p.gap_agend}</div></div>
   `;
