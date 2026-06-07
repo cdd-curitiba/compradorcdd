@@ -427,12 +427,8 @@ table.ot tbody td{padding:8px 4px;color:var(--text2);}
   <!-- PAINEL GERAL -->
   <div id="pg-painel" class="page on">
     <div class="sec-head">
-      <span class="sec-title">Visão Geral de Compradores</span>
-      <span class="sec-sub">Todos os setores · atualizado em 07/06/2026 18:15</span>
-    </div>
-    <div class="sala-tag-row">
-      <span class="sala-tag-label">Sala selecionada</span>
-      <span class="sala-tag-val" id="salaHeaderVal">Sala 1</span>
+      <span class="sec-title">Visão Geral de Compradores <span id="salaHeaderVal" style="font-size:13px;font-weight:500;color:var(--blue);background:var(--blue-dim);border-radius:6px;padding:2px 8px;margin-left:6px;vertical-align:middle;letter-spacing:0;">Sala 1</span></span>
+      <span class="sec-sub">Todos os setores · atualizado em 07/06/2026 18:35</span>
     </div>
     <div class="tcard">
       <table class="gt">
@@ -455,7 +451,7 @@ table.ot tbody td{padding:8px 4px;color:var(--text2);}
   <!-- MEU SETOR -->
   <div id="pg-setor" class="page">
     <div class="sec-head">
-      <span class="sec-title">Meu Setor</span>
+      <span class="sec-title">Meu Setor <span id="setorHeaderVal" style="display:none;font-size:13px;font-weight:500;color:var(--blue);background:var(--blue-dim);border-radius:6px;padding:2px 8px;margin-left:6px;vertical-align:middle;letter-spacing:0;"></span></span>
       <span class="sec-sub">Selecione para ver indicadores e oportunidades</span>
     </div>
 
@@ -529,7 +525,7 @@ const DL={"SEG":"Seg","TER":"Ter","QUA":"Qua","QUI":"Qui","SEX":"Sex","SAB":"Sá
 const DO={"SEG":1,"TER":2,"QUA":3,"QUI":4,"SEX":5,"SAB":6,"DOM":7,"Indefinido":8};
 let sel=null;
 
-document.getElementById('hdate').textContent='Últ. atualização 07/06/2026 18:15';
+document.getElementById('hdate').textContent='Últ. atualização 07/06/2026 18:35';
 
 let _sala='1';
 function atualizarBanner(s){ /* renderPainel já atualiza a sala-row */ }
@@ -611,6 +607,8 @@ function renderChips(){
 
 function pickSetor(s){
   sel=s;renderChips();
+  const sv=document.getElementById('setorHeaderVal');
+  if(sv){sv.textContent='Setor '+s;sv.style.display='inline';}
   const p=PAINEL.find(x=>x.setor===s);if(!p)return;
   document.getElementById('ph').style.display='none';
   const sdet=document.getElementById('sdet');
