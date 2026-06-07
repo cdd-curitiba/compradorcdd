@@ -154,8 +154,10 @@ table.gt thead th{
 }
 table.gt thead th:first-child{text-align:left;padding-left:14px;}
 table.gt tbody tr{border-bottom:1px solid var(--border);}
+table.gt tbody tr:nth-child(odd){background:rgba(30,50,72,.45);}
+table.gt tbody tr:nth-child(even){background:rgba(15,30,46,.25);}
 table.gt tbody tr:last-child{border-bottom:none;}
-table.gt tbody tr:hover{background:rgba(255,255,255,.03);}
+table.gt tbody tr:hover{background:rgba(45,126,247,.10)!important;}
 table.gt tbody td{
   padding:11px 10px;text-align:center;
   color:var(--text2);white-space:nowrap;
@@ -408,7 +410,7 @@ table.ot tbody td{padding:8px 4px;color:var(--text2);}
   <div id="pg-painel" class="page on">
     <div class="sec-head">
       <span class="sec-title">Visão Geral de Compradores</span>
-      <span class="sec-sub">Todos os setores · atualizado em 07/06/2026 13:15</span>
+      <span class="sec-sub">Todos os setores · atualizado em 07/06/2026 17:13</span>
     </div>
     <div class="tcard">
       <table class="gt">
@@ -503,7 +505,7 @@ const DL={"SEG":"Seg","TER":"Ter","QUA":"Qua","QUI":"Qui","SEX":"Sex","SAB":"Sá
 const DO={"SEG":1,"TER":2,"QUA":3,"QUI":4,"SEX":5,"SAB":6,"DOM":7,"Indefinido":8};
 let sel=null;
 
-document.getElementById('hdate').textContent='Últ. atualização 07/06/2026 13:15';
+document.getElementById('hdate').textContent='Últ. atualização 07/06/2026 17:13';
 
 let _sala='1';
 function escolherSala(s){
